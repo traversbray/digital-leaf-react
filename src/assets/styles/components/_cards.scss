@@ -1,0 +1,284 @@
+@use "../utils/breakpoints";
+
+.sub-service-card {
+    box-shadow: 0 2px 13px -5px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(white, white) padding-box, linear-gradient(to bottom, #fff, #11a879) border-box;
+    border-radius: 20px;
+    border-image-slice: 1;
+    border: 2px solid transparent;
+    margin-bottom: 25px;
+    padding: 3em;
+
+    @include breakpoints.media-breakpoint-up(lg) {
+            padding: 60px 25px;
+            margin-bottom: 50px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__title-box {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 0;
+
+            @include breakpoints.media-breakpoint-up(md) {
+                width: 50%;
+                padding: 0 3rem;
+                text-align: left;
+            }
+
+            h3 {
+                font-size: 26px;
+                font-weight: 700;
+                margin-bottom: 15px;
+                line-height: 1.3;
+
+                @include breakpoints.media-breakpoint-up(md) {
+                    font-size: 32px;
+                    margin-bottom: 25px;
+                }
+            }
+
+            a {
+                @include breakpoints.media-breakpoint-down(md) {
+                    display: none;
+                }
+            }
+        }
+
+        &__content-box {
+            width: 100%;
+            text-align: center;
+
+            @include breakpoints.media-breakpoint-up(md) {
+                width: 50%;
+                padding: 0 2rem;
+                text-align: left;
+            }
+
+            h4 {
+                margin-bottom: 20px;
+                font-size: 20px;
+
+                @include breakpoints.media-breakpoint-up(md) {
+                    font-size: 22px;
+                }
+            }
+
+            hr {
+                margin-bottom: 20px;
+                background: linear-gradient(to left, #11a879 25%, #fff);
+
+                @include breakpoints.media-breakpoint-up(md) {
+                    margin-left: 0;
+                }
+            }
+
+            p {
+                font-weight: 700;
+            }
+
+            .mobile-btn-wrapper {
+                margin-top: 25px;
+
+                @include breakpoints.media-breakpoint-up(md) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.service-card {
+    z-index: 1;
+    position: relative; /* Required for the pseudo-element positioning */
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    // background-color: var(--clr-white);
+    transition: all 0.3s ease;
+    width: 100%;
+    display: block;
+    opacity: 1;
+
+    @include breakpoints.media-breakpoint-up(lg) {
+        margin: 25px;
+    }
+
+    @include breakpoints.media-breakpoint-up(md) {
+        width: 300px;
+    }
+
+    &__shadow {
+        position: absolute;
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 20px;
+
+        --angle: 180deg;
+
+        background: linear-gradient(var(--angle), #b5f7cf, #11a879) content-box, linear-gradient(#fff, #11a879) border-box;
+        pointer-events: none;
+        animation: 10s rotate linear infinite;
+    }
+
+    &__shadow.active {
+        @include breakpoints.media-breakpoint-up(lg) {
+            opacity: 1;
+        }
+    }
+
+    &__shadow.transform {
+        @include breakpoints.media-breakpoint-up(lg) {
+            transform: translate(-15px, 15px);
+        }
+    }
+
+    &__wrapper {
+        padding: 50px 20px;
+        z-index: 1;
+        pointer-events: all;
+        box-shadow: 0 2px 13px -5px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff) padding-box;
+        border-radius: 20px;
+        border-image-slice: 1;
+        border: 2px solid #fff;
+        transition: all 0.3s ease;
+
+        @include breakpoints.media-breakpoint-up(lg) {
+            cursor: pointer;
+        }
+
+        &:hover {
+            @include breakpoints.media-breakpoint-up(lg) {
+                border: 2px solid transparent;
+            }
+        }
+    }
+
+    .service-icon {
+        &__img {
+            margin: auto;
+            max-width: 120px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .service-content {
+        h3 {
+            color: var(--clr-primary);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        p {
+            color: var(--clr-blue);
+            text-align: center;
+        }
+    }
+}
+
+.service-card.non-active {
+    @include breakpoints.media-breakpoint-up(lg) {
+        pointer-events: none;
+    }
+}
+
+.service-card.active .service-card__wrapper {
+    @include breakpoints.media-breakpoint-up(lg) {
+        --angle: 180deg;
+
+        background: linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff) padding-box, linear-gradient(var(--angle), #fff, #11a879) border-box;
+        border: 2px solid transparent;
+        animation: 5s rotate linear infinite;
+        box-shadow: 0 2px 18px -5px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.service-card.non-active .service-card__wrapper {
+    @include breakpoints.media-breakpoint-up(lg) {
+        opacity: 0;
+        pointer-events: none;
+        cursor: none;
+    }
+}
+
+@keyframes rotate {
+    to {
+      --angle: 540deg;
+    }
+  }
+
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+.translate-active-2 {
+    @include breakpoints.media-breakpoint-up(lg) {
+        transform: translateX(calc(-100% - 50px));
+    }
+}
+
+.translate-active-3 {
+    @include breakpoints.media-breakpoint-up(lg) {
+        transform: translateX(calc(-200% - 100px));
+    }
+}
+
+.text-card {
+    position: relative;
+    box-shadow: 0 2px 13px -5px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(white, white) padding-box, linear-gradient(to bottom, #fff, #11a879) border-box;
+    border-radius: 20px;
+    border: 1px solid transparent;
+
+    &__content {
+        padding: 2rem;
+        color: var(--clr-blue);
+
+        @include breakpoints.media-breakpoint-up(lg) {
+            padding: 76px 72px;
+        }
+    }
+}
+
+.parent-services-container {
+    background-color: #f6f8fa;
+    border-radius: 20px;
+    padding: 50px 0;
+
+    @include breakpoints.media-breakpoint-up(lg) {
+        padding: 90px;
+    }
+
+    .parent-services-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 300px);
+        gap: 50px;
+        grid-auto-rows: minmax(100px, auto);
+        margin: auto;
+        justify-content: center;
+
+        .service-card {
+            margin: 0;
+
+            &__wrapper {
+                min-height: 450px;
+            }
+        }
+    }
+}

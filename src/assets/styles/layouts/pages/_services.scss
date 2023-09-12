@@ -1,0 +1,22 @@
+.services-archive {
+    &__hero {
+        &__content {
+            p {
+                font-size: 24px;
+            }
+        }
+
+        &__side-content {
+            p {
+                padding: 2rem 0;
+                max-width: 440px;
+                margin: auto;
+            }
+
+            hr {
+                max-width: 150px;
+                border: 1px solid #fff;
+            }
+        }
+    }
+}

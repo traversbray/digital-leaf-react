@@ -1,0 +1,95 @@
+@use "../utils/breakpoints";
+
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 9999;
+	background-color: var(--clr-secondary);
+
+	.logo {
+		max-width: 125px;
+		transition: 0.2s ease-in-out;
+		width: 100%;
+
+		@include breakpoints.media-breakpoint-up(lg) {
+			max-width: 175px;
+			padding: 0.4rem 0;
+		}
+	}
+
+	.menu {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+
+		.menu-item {
+			padding: 2rem 0;
+
+			a {
+				color: var(--clr-white);
+				font-size: var(--fs-20);
+				text-decoration: none;
+
+				&:hover {
+					color: var(--clr-primary);
+				}
+			}
+
+			&.header-btn a {
+				background-color: var(--clr-primary);
+				color: var(--clr-white);
+				padding: 1rem 2.5rem;
+				border-radius: 99px;
+				font-weight: 700;
+
+				&:hover {
+					background-color: var(--clr-white);
+					color: var(--clr-primary);
+				}
+			}
+		}
+
+		@include breakpoints.media-breakpoint-down(lg) {
+			display: none;
+		}
+	}
+
+	.hamburger-react {
+		display: flex;
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+		@include breakpoints.media-breakpoint-up(lg) {
+			display: none;
+		}
+
+		.hamburger-inner,
+		.hamburger-inner::before,
+		.hamburger-inner::after {
+			background-color: var(--clr-white);
+		}
+	}
+
+	.hamburger:hover {
+		background-color: transparent;
+	}
+
+	.nav-primary {
+		display: none;
+
+		@include breakpoints.media-breakpoint-up(lg) {
+			display: flex;
+		}
+
+		.btn {
+			margin-left: 2rem;
+		}
+	}
+}
+
+.header-wrapper {
+	padding: 1em 0;
+
+	@include breakpoints.media-breakpoint-up(md) {
+		padding: 0;
+	}
+}

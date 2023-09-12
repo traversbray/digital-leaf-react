@@ -1,0 +1,28 @@
+.services-archive {
+    &__content {
+        background-color: var(--clr-secondary);
+    }
+
+    h2 {
+        color: var(--clr-neutral-light);
+    }
+
+    .custom-gradient-hr {
+        margin-left: 0;
+    }
+
+    .cards-container {
+       margin-bottom: 90px;
+    }
+
+    .development-cards {
+        h2 {
+            text-align: right;
+        }
+
+        hr {
+            margin-right: 0;
+            margin-left: auto;
+        }
+    }
+}

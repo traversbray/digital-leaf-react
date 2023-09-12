@@ -1,0 +1,48 @@
+
+@use "../utils/breakpoints";
+
+.site-footer {
+	color: var(--clr-white);
+	background-color: var(--clr-secondary);
+	padding: 3rem 0;
+
+	&__cta {
+		font-size: var(--fs-24);
+		margin-top: 1rem;
+		line-height: 1.2;
+
+		p:last-of-type {
+			margin: 0;
+		}
+	}
+
+	&__copyright {
+		opacity: 0.5;
+		font-size: var(--fs-12);
+		margin-top: 3.5rem;
+	}
+
+	.logo {
+		max-width: 150px;
+		transition: 0.2s ease-in-out;
+
+		@include breakpoints.media-breakpoint-up(lg) {
+			max-width: 175px;
+		}
+	}
+
+	.menu {
+		display: flex;
+		gap: 2rem;
+
+		.menu-item a {
+			color: var(--clr-white);
+			font-size: var(--fs-20);
+			text-decoration: none;
+
+			&:hover {
+				color: var(--clr-primary);
+			}
+		}
+	}
+}

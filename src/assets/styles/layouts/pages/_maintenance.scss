@@ -1,0 +1,28 @@
+.page-template-template-maintenance {
+    background-color: var(--clr-secondary);
+
+    .site-header {
+        display: none;
+    }
+
+    .primary-logo {
+        margin: 0 auto;
+        max-width: 300px;
+    }
+
+    .maintenance-page {
+        &__logo {
+            display: flex;
+            align-items: center;
+            margin: auto;
+            height: 100vh;
+            height: calc(var(--vh, 1vh) * 100);
+        }
+
+        .svg-logo-wrapper {
+            width: 250px;
+            align-items: center;
+            margin: auto;
+        }
+    }
+}

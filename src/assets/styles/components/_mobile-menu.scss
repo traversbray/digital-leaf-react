@@ -1,0 +1,75 @@
+@use "../utils/breakpoints";
+
+.mobile-menu {
+	background-color: var(--clr-white);
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 998;
+	transition: all 400ms ease-in-out;
+	top: -100vh;
+	padding: 7rem 1rem 5rem;
+	overflow: scroll;
+
+	&--open {
+		top: 0;
+	}
+
+	.menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		.menu-item {
+			margin: 0.5rem 0;
+			position: relative;
+
+			a {
+				display: block;
+
+				&.btn {
+					display: inline-block;
+				}
+			}
+
+			&.menu-item-has-children {
+				margin: 1rem 0;
+
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					width: 22px;
+					height: 12px;
+					-webkit-mask: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuNC4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIzIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMTM3LjQgMzc0LjZjMTIuNSAxMi41IDMyLjggMTIuNSA0NS4zIDBsMTI4LTEyOGM5LjItOS4yIDExLjktMjIuOSA2LjktMzQuOXMtMTYuNi0xOS44LTI5LjYtMTkuOEwzMiAxOTJjLTEyLjkgMC0yNC42IDcuOC0yOS42IDE5LjhzLTIuMiAyNS43IDYuOSAzNC45bDEyOCAxMjh6Ii8+PC9zdmc+);
+					mask: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIj48IS0tISBGb250IEF3ZXNvbWUgUHJvIDYuNC4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlIChDb21tZXJjaWFsIExpY2Vuc2UpIENvcHlyaWdodCAyMDIzIEZvbnRpY29ucywgSW5jLiAtLT48cGF0aCBkPSJNMTM3LjQgMzc0LjZjMTIuNSAxMi41IDMyLjggMTIuNSA0NS4zIDBsMTI4LTEyOGM5LjItOS4yIDExLjktMjIuOSA2LjktMzQuOXMtMTYuNi0xOS44LTI5LjYtMTkuOEwzMiAxOTJjLTEyLjkgMC0yNC42IDcuOC0yOS42IDE5LjhzLTIuMiAyNS43IDYuOSAzNC45bDEyOCAxMjh6Ii8+PC9zdmc+);
+					-webkit-mask-size: contain;
+					mask-size: contain;
+					-webkit-mask-repeat: no-repeat;
+					mask-repeat: no-repeat;
+					top: 5px;
+					right: 0;
+					color: var(--clr-primary);
+					background-color: var(--clr-primary);
+				}
+
+				a {
+					color: var(--clr-secondary);
+					font-weight: 600;
+				}
+
+				.sub-menu {
+					display: none;
+					list-style: none;
+					margin: 0;
+					padding: 0 0 0 1rem;
+
+					a {
+						color: var(--clr-primary);
+						font-weight: 400;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+@use "../../utils/breakpoints";
+
+.template-login {
+    .site-footer {
+        min-height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
+
+.login-container {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,162 @@
+@use "../../utils/breakpoints";
+
+.g-contact-white {
+    background-color: var(--clr-neutral-light);
+}
+
+.g-contact {
+    h2 {
+        color: var(--clr-blue);
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 24px;
+
+        @include breakpoints.media-breakpoint-up(md) {
+            font-size: 50px;
+        }
+
+        @include breakpoints.media-breakpoint-up(lg) {
+            text-align: left;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 2em 0;
+
+        @include breakpoints.media-breakpoint-up(lg) {
+            flex-direction: row;
+            padding: 90px 0;
+        }
+
+        &__cta-text-container {
+            width: 100%;
+
+            @include breakpoints.media-breakpoint-up(lg) {
+                width: 40%;
+            }
+        }
+
+        &__cta-form-container {
+            width: 100%;
+            color: var(--clr-blue);
+
+            @include breakpoints.media-breakpoint-up(lg) {
+                width: 60%;
+            }
+        }
+    }
+}
+
+.cta-form {
+    margin: auto;
+	padding: 2rem 1rem;
+	background-color: var(--clr-white);
+	border-radius: 20px;
+    max-width: 720px;
+
+    @include breakpoints.media-breakpoint-up(md) {
+        padding: 3rem;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 25px;
+
+        @include breakpoints.media-breakpoint-up(md) {
+            font-size: 34px;
+            margin-bottom: 50px;
+        }
+    }
+
+    .cta-field {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        label {
+            padding-left: 10px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        input,
+        select,
+        textarea {
+            border: 1px solid #1f363d78;
+            border-radius: 5px;
+            padding: 7px 10px;
+        }
+
+        select {
+            color: #1f363d66;
+        }
+
+        input::placeholder {
+            color: var(--clr-blue);
+            opacity: 0.4;
+        }
+
+        textarea::placeholder {
+            color: var(--clr-blue);
+            opacity: 0.4;
+        }
+
+        select::placeholder {
+            color: var(--clr-blue);
+            opacity: 0.4;
+        }
+
+        .select-active {
+            color: var(--clr-blue);
+            opacity: 1;
+        }
+    }
+
+    .cta-field:first-of-type {
+        @include breakpoints.media-breakpoint-up(md) {
+            margin-right: 2%;
+        }
+    }
+
+    .input-row-col-2 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1.5em;
+
+        .cta-field {
+            @include breakpoints.media-breakpoint-up(md) {
+                width: 48%;
+            }
+        }
+
+        @include breakpoints.media-breakpoint-up(md) {
+            flex-direction: row;
+        }
+    }
+
+    .input-row-col-1 {
+        width: 100%;
+        margin-bottom: 1.5em;
+
+        .cta-field {
+            width: 100%;
+        }
+    }
+
+    .submit-btn-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+        @include breakpoints.media-breakpoint-up(md) {
+            justify-content: flex-end;
+        }
+    }
+}

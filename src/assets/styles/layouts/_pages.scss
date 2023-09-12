@@ -1,0 +1,16 @@
+@use "../utils/breakpoints";
+
+.g-hero {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+
+    @include breakpoints.media-breakpoint-up(md) {
+        min-height: 30vh;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 0 auto;
+    }
+}
